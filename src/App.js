@@ -9,6 +9,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   color: #539bf5;
+  margin-bottom: 50px;
 `;
 
 const App = () => {

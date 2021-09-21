@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   text-align: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 70%;
 `;
 
 const Avatar = styled.div`
@@ -14,6 +17,10 @@ const Avatar = styled.div`
   margin: auto;
   margin-bottom: 20px;
   align-items: center;
+  border: 1px solid #539bf5;
+  border-radius: 10px;
+  padding: 30px 5px;
+  width: 200px;
 `;
 
 const Image = styled.img`
@@ -21,6 +28,7 @@ const Image = styled.img`
   width: 80px;
   border: 5px solid #539bf5;
   border-radius: 50%;
+  margin-bottom: 5px;
 `;
 
 const StyledLink = styled(Link)`

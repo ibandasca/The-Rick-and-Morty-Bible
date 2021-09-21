@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   text-align: center;
 `;
 
 const Avatar = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
   margin-bottom: 20px;
-`;
-
-const Name = styled.div`
-  color: #539bf5;
+  align-items: center;
 `;
 
 const Image = styled.img`
   height: 80px;
+  width: 80px;
   border: 5px solid #539bf5;
   border-radius: 50%;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #539bf5;
 `;
 
 export const Home = () => {
@@ -30,12 +38,14 @@ export const Home = () => {
   }, []);
 
   return (
-    <Container className="App">
+    <Container>
       {characters.map((character) => {
         return (
           <Avatar key={character.id}>
             <Image src={character.image} alt="" />
-            <Name>{character.name}</Name>
+            <StyledLink to={`/character/${character.id}`}>
+              {character.name}
+            </StyledLink>
           </Avatar>
         );
       })}

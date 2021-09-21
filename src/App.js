@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Home } from "./Views/Home";
 
 const Container = styled.div`
   text-align: center;
@@ -12,6 +13,8 @@ const App = () => {
   return (
     <Container className="App">
       <Title>The Rick and Morty bible</Title>
+      <Home />
+      })}
     </Container>
   );
 };

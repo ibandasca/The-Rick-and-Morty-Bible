@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import useGetCharacter from "../../utils/hooks/useGetCharacter";
 
 const Image = styled.img`
   margin-top: 20px;
@@ -34,13 +34,8 @@ const StyledLink = styled(Link)`
 
 export const Character = () => {
   let { id } = useParams();
-  const [character, setCharacter] = useState([]);
 
-  useEffect(() => {
-    axios.get(`https://rickandmortyapi.com/api/character/${id}`).then((res) => {
-      setCharacter(res.data);
-    });
-  }, [id]);
+  const { character } = useGetCharacter(id);
 
   return (
     <div>

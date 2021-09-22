@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Router, Link } from "react-router-dom";
 import useGetCharacters from "../../utils/hooks/useGetCharacters";
 
 const Container = styled.div`
@@ -43,8 +43,12 @@ export const Home = () => {
     <Container>
       {characters?.map((character) => {
         return (
-          <Avatar key={character.id}>
-            <Image src={character.image} alt="" />
+          <Avatar key={character.id} data-testid="avatar-container">
+            <Image
+              src={character.image}
+              alt={`${character.name}-image`}
+              data-testid="avatar-image"
+            />
             <StyledLink to={`/character/${character.id}`}>
               {character.name}
             </StyledLink>

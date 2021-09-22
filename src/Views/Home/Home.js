@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import useGetCharacters from "../../utils/hooks/useGetCharacters";
 
 const Container = styled.div`
   text-align: center;
@@ -37,17 +37,11 @@ const StyledLink = styled(Link)`
 `;
 
 export const Home = () => {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://rickandmortyapi.com/api/character").then((res) => {
-      setCharacters(res.data.results);
-    });
-  }, []);
+  const { characters } = useGetCharacters();
 
   return (
     <Container>
-      {characters.map((character) => {
+      {characters?.map((character) => {
         return (
           <Avatar key={character.id}>
             <Image src={character.image} alt="" />

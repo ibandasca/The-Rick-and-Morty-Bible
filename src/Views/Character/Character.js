@@ -38,8 +38,12 @@ export const Character = () => {
   const { character } = useGetCharacter(id);
 
   return (
-    <div>
-      <Image src={character.image} alt={`${character.name}`} />
+    <div data-testid="character-container">
+      <Image
+        src={character.image}
+        alt={`${character.name}-image`}
+        data-testid="character-image"
+      />
       <Name>{character.name}</Name>
       <div>
         <TitleItem>Species:</TitleItem>

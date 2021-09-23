@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { CounterContext } from "../contexts/counter-context";
 
 const useGetCharacters = () => {
-  const [characters, setCharacters] = useState([]);
-  const [counter, setCounter] = useState(1);
-  const URL = `https://rickandmortyapi.com/api/character/?page=${counter}`;
-  const [currentURL, setCurrentURL] = useState(URL);
+  debugger;
+  const { counter, setCounter } = useContext(CounterContext);
 
   const getURL = (counter) => {
     return `https://rickandmortyapi.com/api/character/?page=${counter}`;
   };
+  const [characters, setCharacters] = useState([]);
+  const [currentURL, setCurrentURL] = useState(getURL(counter));
 
   const getNextPage = () => {
     setCounter(counter + 1);

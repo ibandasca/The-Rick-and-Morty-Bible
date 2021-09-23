@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Character } from "./Views/Character";
 import { Home } from "./Views/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { CounterProvider } from "./utils/contexts/counter-context";
 
 const Container = styled.div`
   text-align: center;
@@ -17,10 +18,12 @@ const App = () => {
     <Router>
       <Container>
         <Title>The Rick and Morty bible</Title>
-        <Switch>
-          <Route exact={true} path="/" children={<Home />} />
-          <Route path="/character/:id" children={<Character />} />
-        </Switch>
+        <CounterProvider>
+          <Switch>
+            <Route exact={true} path="/" children={<Home />} />
+            <Route path="/character/:id" children={<Character />} />
+          </Switch>
+        </CounterProvider>
       </Container>
     </Router>
   );

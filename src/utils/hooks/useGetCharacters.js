@@ -10,25 +10,22 @@ const useGetCharacters = () => {
     return `https://rickandmortyapi.com/api/character/?page=${counter}`;
   };
   const [characters, setCharacters] = useState([]);
-  const [currentURL, setCurrentURL] = useState(getURL(counter));
 
   const getNextPage = () => {
     setCounter(counter + 1);
-    setCurrentURL(getURL(counter));
   };
 
   const getPreviousPage = () => {
     if (counter > 0) {
       setCounter(counter - 1);
-      setCurrentURL(getURL(counter));
     }
   };
 
   useEffect(() => {
-    axios.get(currentURL).then((res) => {
+    axios.get(getURL(counter)).then((res) => {
       setCharacters(res.data.results);
     });
-  }, [currentURL]);
+  }, [counter]);
 
   return { characters, getNextPage, getPreviousPage };
 };

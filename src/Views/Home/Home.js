@@ -1,9 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import { Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useGetCharacters from "../../utils/hooks/useGetCharacters";
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ButtonContainer = styled.div`
+  margin-bottom: 20px;
+`;
+
+const Button = styled.button`
+  width: 100px;
+  border: 1px solid #539bf5;
+  border-radius: 5px;
+  padding: 10px 5px;
+  color: #539bf5;
+  background-color: transparent;
+  text-decoration: none;
+  margin-right: 10px;
+`;
+
+const AvatarContainer = styled.div`
   text-align: center;
   display: inline-flex;
   flex-wrap: wrap;
@@ -37,24 +58,30 @@ const StyledLink = styled(Link)`
 `;
 
 export const Home = () => {
-  const { characters } = useGetCharacters();
+  const { characters, getNextPage, getPreviousPage } = useGetCharacters();
 
   return (
     <Container>
-      {characters?.map((character) => {
-        return (
-          <Avatar key={character.id} data-testid="avatar-container">
-            <Image
-              src={character.image}
-              alt={`${character.name}-image`}
-              data-testid="avatar-image"
-            />
-            <StyledLink to={`/character/${character.id}`}>
-              {character.name}
-            </StyledLink>
-          </Avatar>
-        );
-      })}
+      <ButtonContainer>
+        <Button onClick={() => getPreviousPage()}>{`< Previous`}</Button>
+        <Button onClick={() => getNextPage()}>{`Next >`}</Button>
+      </ButtonContainer>
+      <AvatarContainer>
+        {characters?.map((character) => {
+          return (
+            <Avatar key={character.id} data-testid="avatar-container">
+              <Image
+                src={character.image}
+                alt={`${character.name}-image`}
+                data-testid="avatar-image"
+              />
+              <StyledLink to={`/character/${character.id}`}>
+                {character.name}
+              </StyledLink>
+            </Avatar>
+          );
+        })}
+      </AvatarContainer>
     </Container>
   );
 };

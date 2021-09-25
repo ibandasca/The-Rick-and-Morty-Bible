@@ -14,12 +14,12 @@ const Title = styled.h1`
   margin-bottom: 50px;
 `;
 
-const App = () => {
-  const client = new ApolloClient({
-    uri: "https://rickandmortyapi.com/graphql",
-    cache: new InMemoryCache(),
-  });
+const client = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql",
+  cache: new InMemoryCache(),
+});
 
+const App = () => {
   return (
     <ApolloProvider client={client}>
       <Router>

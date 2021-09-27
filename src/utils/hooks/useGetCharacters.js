@@ -8,7 +8,7 @@ const useGetCharacters = () => {
   const { counter, setCounter } = useContext(CounterContext);
   const [characters, setCharacters] = useState([]);
 
-  const [getCharacters, { data }] = useLazyQuery(GET_CHARACTERS, {
+  const [getCharacters, { loading, data }] = useLazyQuery(GET_CHARACTERS, {
     variables: { page: counter },
   });
 
@@ -34,7 +34,7 @@ const useGetCharacters = () => {
     }
   }, [data]);
 
-  return { characters, getNextPage, getPreviousPage };
+  return { characters, loading, getNextPage, getPreviousPage };
 };
 
 export default useGetCharacters;

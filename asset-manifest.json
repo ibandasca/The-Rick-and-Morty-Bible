@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/github.io/The-Rick-and-Morty-Bible/static/css/main.ddb24fb7.chunk.css",
-    "main.js": "/github.io/The-Rick-and-Morty-Bible/static/js/main.f7e231a5.chunk.js",
-    "main.js.map": "/github.io/The-Rick-and-Morty-Bible/static/js/main.f7e231a5.chunk.js.map",
-    "runtime-main.js": "/github.io/The-Rick-and-Morty-Bible/static/js/runtime-main.1e4e3816.js",
-    "runtime-main.js.map": "/github.io/The-Rick-and-Morty-Bible/static/js/runtime-main.1e4e3816.js.map",
-    "static/js/2.5aec9f8f.chunk.js": "/github.io/The-Rick-and-Morty-Bible/static/js/2.5aec9f8f.chunk.js",
-    "static/js/2.5aec9f8f.chunk.js.map": "/github.io/The-Rick-and-Morty-Bible/static/js/2.5aec9f8f.chunk.js.map",
-    "static/js/3.8c4c3e95.chunk.js": "/github.io/The-Rick-and-Morty-Bible/static/js/3.8c4c3e95.chunk.js",
-    "static/js/3.8c4c3e95.chunk.js.map": "/github.io/The-Rick-and-Morty-Bible/static/js/3.8c4c3e95.chunk.js.map",
-    "index.html": "/github.io/The-Rick-and-Morty-Bible/index.html",
-    "static/css/main.ddb24fb7.chunk.css.map": "/github.io/The-Rick-and-Morty-Bible/static/css/main.ddb24fb7.chunk.css.map",
-    "static/js/2.5aec9f8f.chunk.js.LICENSE.txt": "/github.io/The-Rick-and-Morty-Bible/static/js/2.5aec9f8f.chunk.js.LICENSE.txt"
+    "main.css": "/github.com/The-Rick-and-Morty-Bible/static/css/main.ddb24fb7.chunk.css",
+    "main.js": "/github.com/The-Rick-and-Morty-Bible/static/js/main.f7e231a5.chunk.js",
+    "main.js.map": "/github.com/The-Rick-and-Morty-Bible/static/js/main.f7e231a5.chunk.js.map",
+    "runtime-main.js": "/github.com/The-Rick-and-Morty-Bible/static/js/runtime-main.ddbad2de.js",
+    "runtime-main.js.map": "/github.com/The-Rick-and-Morty-Bible/static/js/runtime-main.ddbad2de.js.map",
+    "static/js/2.bcc24c60.chunk.js": "/github.com/The-Rick-and-Morty-Bible/static/js/2.bcc24c60.chunk.js",
+    "static/js/2.bcc24c60.chunk.js.map": "/github.com/The-Rick-and-Morty-Bible/static/js/2.bcc24c60.chunk.js.map",
+    "static/js/3.8c4c3e95.chunk.js": "/github.com/The-Rick-and-Morty-Bible/static/js/3.8c4c3e95.chunk.js",
+    "static/js/3.8c4c3e95.chunk.js.map": "/github.com/The-Rick-and-Morty-Bible/static/js/3.8c4c3e95.chunk.js.map",
+    "index.html": "/github.com/The-Rick-and-Morty-Bible/index.html",
+    "static/css/main.ddb24fb7.chunk.css.map": "/github.com/The-Rick-and-Morty-Bible/static/css/main.ddb24fb7.chunk.css.map",
+    "static/js/2.bcc24c60.chunk.js.LICENSE.txt": "/github.com/The-Rick-and-Morty-Bible/static/js/2.bcc24c60.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1e4e3816.js",
-    "static/js/2.5aec9f8f.chunk.js",
+    "static/js/runtime-main.ddbad2de.js",
+    "static/js/2.bcc24c60.chunk.js",
     "static/css/main.ddb24fb7.chunk.css",
     "static/js/main.f7e231a5.chunk.js"
   ]

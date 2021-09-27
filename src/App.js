@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { Character } from "./Views/Character";
 import { Home } from "./Views/Home";
 import { CounterProvider } from "./utils/contexts/counter-context";
@@ -22,7 +22,7 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <HashRouter basename="/">
         <Container>
           <Title>The Rick and Morty bible</Title>
           <CounterProvider>
@@ -32,7 +32,7 @@ const App = () => {
             </Switch>
           </CounterProvider>
         </Container>
-      </Router>
+      </HashRouter>
     </ApolloProvider>
   );
 };

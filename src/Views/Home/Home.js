@@ -66,8 +66,6 @@ export const Home = () => {
   const { characters, loading, getNextPage, getPreviousPage } =
     useGetCharacters();
 
-  console.log(loading);
-
   return (
     <>
       {loading ? (

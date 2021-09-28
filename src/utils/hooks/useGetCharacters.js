@@ -34,7 +34,7 @@ const useGetCharacters = () => {
     }
   }, [data]);
 
-  return { characters, loading, getNextPage, getPreviousPage };
+  return { characters, loading, counter, getNextPage, getPreviousPage };
 };
 
 export default useGetCharacters;

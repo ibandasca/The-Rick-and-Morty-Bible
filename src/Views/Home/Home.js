@@ -63,7 +63,7 @@ const StyledLink = styled(Link)`
 `;
 
 export const Home = () => {
-  const { characters, loading, getNextPage, getPreviousPage } =
+  const { characters, loading, counter, getNextPage, getPreviousPage } =
     useGetCharacters();
 
   return (
@@ -73,8 +73,18 @@ export const Home = () => {
       ) : (
         <Container>
           <ButtonContainer>
-            <Button onClick={() => getPreviousPage()}>{`< Previous`}</Button>
-            <Button onClick={() => getNextPage()}>{`Next >`}</Button>
+            {counter > 1 && (
+              <Button
+                onClick={() => getPreviousPage()}
+                data-testid="previous-button"
+              >{`< Previous`}</Button>
+            )}
+            {counter < 34 && (
+              <Button
+                onClick={() => getNextPage()}
+                data-testid="next-button"
+              >{`Next >`}</Button>
+            )}
           </ButtonContainer>
           <AvatarContainer>
             {characters?.map((character) => {
@@ -93,8 +103,18 @@ export const Home = () => {
             })}
           </AvatarContainer>
           <ButtonContainer>
-            <Button onClick={() => getPreviousPage()}>{`< Previous`}</Button>
-            <Button onClick={() => getNextPage()}>{`Next >`}</Button>
+            {counter > 1 && (
+              <Button
+                onClick={() => getPreviousPage()}
+                data-testid="previous-button"
+              >{`< Previous`}</Button>
+            )}
+            {counter < 34 && (
+              <Button
+                onClick={() => getNextPage()}
+                data-testid="next-button"
+              >{`Next >`}</Button>
+            )}
           </ButtonContainer>
         </Container>
       )}

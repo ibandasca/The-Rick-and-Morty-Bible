@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/The-Rick-and-Morty-Bible/static/css/main.ddb24fb7.chunk.css",
-    "main.js": "/The-Rick-and-Morty-Bible/static/js/main.4438821d.chunk.js",
-    "main.js.map": "/The-Rick-and-Morty-Bible/static/js/main.4438821d.chunk.js.map",
+    "main.js": "/The-Rick-and-Morty-Bible/static/js/main.5fffe23d.chunk.js",
+    "main.js.map": "/The-Rick-and-Morty-Bible/static/js/main.5fffe23d.chunk.js.map",
     "runtime-main.js": "/The-Rick-and-Morty-Bible/static/js/runtime-main.8a8537d2.js",
     "runtime-main.js.map": "/The-Rick-and-Morty-Bible/static/js/runtime-main.8a8537d2.js.map",
     "static/js/2.804839b6.chunk.js": "/The-Rick-and-Morty-Bible/static/js/2.804839b6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8a8537d2.js",
     "static/js/2.804839b6.chunk.js",
     "static/css/main.ddb24fb7.chunk.css",
-    "static/js/main.4438821d.chunk.js"
+    "static/js/main.5fffe23d.chunk.js"
   ]
 }

@@ -1,7 +1,12 @@
 # The-Rick-and-Morty-Bible
 
-In the project directory, you can run:
+Page: https://ibandasca.github.io/The-Rick-and-Morty-Bible/#/
 
-### `yarn start`
+The Rick and Morty bible is a project based on the [The Rick and Morty API
+](https://rickandmortyapi.com/) that wants to give to the user a complete guide about the characters and their info.
 
-![image](https://user-images.githubusercontent.com/32579111/134321430-44f42844-67f2-4a05-a901-2e96559bbeab.png)
+![image](https://user-images.githubusercontent.com/32579111/135061933-642a89c0-5fa5-453b-8391-89751bd6ea62.png)
+
+![image](https://user-images.githubusercontent.com/32579111/135062202-3c1d8ff1-f086-436d-bfc3-04cc64228cb1.png)
+
+

@@ -26,7 +26,8 @@ const Button = styled.button`
   color: #539bf5;
   background-color: transparent;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
 `;
 
 const AvatarContainer = styled.div`
@@ -45,7 +46,7 @@ const Avatar = styled.div`
   align-items: center;
   border: 1px solid #539bf5;
   border-radius: 10px;
-  padding: 30px 5px;
+  padding: 20px 10px 10px 10px;
   width: 200px;
 `;
 
@@ -54,7 +55,6 @@ const Image = styled.img`
   width: 80px;
   border: 5px solid #539bf5;
   border-radius: 50%;
-  margin-bottom: 5px;
 `;
 
 const StyledLink = styled(Link)`
@@ -80,18 +80,22 @@ export const Home = () => {
             {characters?.map((character) => {
               return (
                 <Avatar key={character.id} data-testid="avatar-container">
-                  <Image
-                    src={character.image}
-                    alt={`${character.name}-image`}
-                    data-testid="avatar-image"
-                  />
                   <StyledLink to={`/character/${character.id}`}>
-                    {character.name}
+                    <Image
+                      src={character.image}
+                      alt={`${character.name}-image`}
+                      data-testid="avatar-image"
+                    />
+                    <p>{character.name}</p>
                   </StyledLink>
                 </Avatar>
               );
             })}
           </AvatarContainer>
+          <ButtonContainer>
+            <Button onClick={() => getPreviousPage()}>{`< Previous`}</Button>
+            <Button onClick={() => getNextPage()}>{`Next >`}</Button>
+          </ButtonContainer>
         </Container>
       )}
     </>

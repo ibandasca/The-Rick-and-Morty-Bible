@@ -92,6 +92,10 @@ export const Home = () => {
               );
             })}
           </AvatarContainer>
+          <ButtonContainer>
+            <Button onClick={() => getPreviousPage()}>{`< Previous`}</Button>
+            <Button onClick={() => getNextPage()}>{`Next >`}</Button>
+          </ButtonContainer>
         </Container>
       )}
     </>

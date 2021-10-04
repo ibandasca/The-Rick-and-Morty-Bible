@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { useQuery } from "@apollo/client";
+import { GET_CHARACTER } from "../../graphql/getCharacterQuery";
 
 const useGetCharacter = (id) => {
-  const [character, setCharacter] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  debugger;
+  const [character, setCharacter] = useState({});
+
+  const { loading, data } = useQuery(GET_CHARACTER, {
+    variables: { id },
+  });
 
   useEffect(() => {
-    axios
-      .get(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((res) => {
-        setCharacter(res.data);
-      })
-      .finally(() => setIsLoading(false));
-  }, [id]);
+    setCharacter(data);
+  }, [data]);
 
-  return { character, isLoading };
+  return { character, loading };
 };
 
 export default useGetCharacter;

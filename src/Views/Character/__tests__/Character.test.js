@@ -6,19 +6,21 @@ import useGetCharacter from "../../../utils/hooks/useGetCharacter";
 jest.mock("../../../utils/hooks/useGetCharacter.js");
 
 let mockCharacter = {
-  episode: ["https://rickandmortyapi.com/api/episode/1"],
-  id: 12,
-  gender: "Male",
-  name: "Batman",
-  image: "https://batman.com/api/character/avatar/1.jpeg",
-  location: {
-    name: "Earth (Replacement Dimension)",
+  character: {
+    episode: ["https://rickandmortyapi.com/api/episode/1"],
+    id: 12,
+    gender: "Male",
+    name: "Batman",
+    image: "https://batman.com/api/character/avatar/1.jpeg",
+    location: {
+      name: "Earth (Replacement Dimension)",
+    },
+    origin: {
+      name: "Gotham",
+    },
+    species: "Human",
+    status: "Alive",
   },
-  origin: {
-    name: "Gotham",
-  },
-  species: "Human",
-  status: "Alive",
 };
 
 const renderComponent = () => {
@@ -45,16 +47,18 @@ describe("Character", () => {
     expect(characterImage).toHaveAttribute("src", mockCharacter.image);
     expect(characterImage).toHaveAttribute(
       "alt",
-      `${mockCharacter.name}-image`
+      `${mockCharacter.character.name}-image`
     );
-    expect(getByText(mockCharacter.name)).toBeInTheDocument();
-    expect(getByText(mockCharacter.gender)).toBeInTheDocument();
-    expect(getByText(mockCharacter.location.name)).toBeInTheDocument();
-    expect(getByText(mockCharacter.origin.name)).toBeInTheDocument();
-    expect(getByText(mockCharacter.species)).toBeInTheDocument();
-    expect(getByText(mockCharacter.status)).toBeInTheDocument();
+    expect(getByText(mockCharacter.character.name)).toBeInTheDocument();
+    expect(getByText(mockCharacter.character.gender)).toBeInTheDocument();
     expect(
-      getByText(`${mockCharacter.episode.length} episodes`)
+      getByText(mockCharacter.character.location.name)
+    ).toBeInTheDocument();
+    expect(getByText(mockCharacter.character.origin.name)).toBeInTheDocument();
+    expect(getByText(mockCharacter.character.species)).toBeInTheDocument();
+    expect(getByText(mockCharacter.character.status)).toBeInTheDocument();
+    expect(
+      getByText(`${mockCharacter.character.episode.length} episodes`)
     ).toBeInTheDocument();
   });
 });

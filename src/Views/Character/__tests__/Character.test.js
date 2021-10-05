@@ -34,7 +34,7 @@ const renderComponent = () => {
 describe("Character", () => {
   it("renders the component without crashing", () => {
     useGetCharacter.mockReturnValue({
-      character: mockCharacter,
+      data: mockCharacter,
     });
 
     const { getByText } = renderComponent();

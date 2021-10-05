@@ -48,7 +48,7 @@ const StyledLink = styled(Link)`
 export const Character = () => {
   let { id } = useParams();
 
-  const { character, loading } = useGetCharacter(id);
+  const { data, loading } = useGetCharacter(id);
 
   return (
     <>
@@ -60,50 +60,48 @@ export const Character = () => {
             <StyledLink to="/">{`< Back`}</StyledLink>
           </ButtonContainer>
           <div data-testid="character-container">
-            {character?.character?.image && (
+            {data?.character?.image && (
               <Image
-                src={character?.character?.image}
-                alt={`${character?.character?.name}-image`}
+                src={data?.character?.image}
+                alt={`${data?.character?.name}-image`}
                 data-testid="character-image"
               />
             )}
-            {character?.character?.name && (
-              <Name>{character?.character?.name}</Name>
-            )}
-            {character?.character?.species && (
+            {data?.character?.name && <Name>{data?.character?.name}</Name>}
+            {data?.character?.species && (
               <div>
                 <TitleItem>Species:</TitleItem>
-                <ItemInfo>{character?.character?.species}</ItemInfo>
+                <ItemInfo>{data?.character?.species}</ItemInfo>
               </div>
             )}
-            {character?.character?.gender && (
+            {data?.character?.gender && (
               <div>
                 <TitleItem>Genre:</TitleItem>
-                <ItemInfo>{character?.character?.gender}</ItemInfo>
+                <ItemInfo>{data?.character?.gender}</ItemInfo>
               </div>
             )}
-            {character?.character?.location?.name && (
+            {data?.character?.location?.name && (
               <div>
                 <TitleItem>Location:</TitleItem>
-                <ItemInfo>{character?.character?.location.name}</ItemInfo>
+                <ItemInfo>{data?.character?.location.name}</ItemInfo>
               </div>
             )}
-            {character?.character?.origin?.name && (
+            {data?.character?.origin?.name && (
               <div>
                 <TitleItem>Origin:</TitleItem>
-                <ItemInfo>{character?.character?.origin.name}</ItemInfo>
+                <ItemInfo>{data?.character?.origin.name}</ItemInfo>
               </div>
             )}
-            {character?.character?.status && (
+            {data?.character?.status && (
               <div>
                 <TitleItem>Status:</TitleItem>
-                <ItemInfo>{character?.character?.status}</ItemInfo>
+                <ItemInfo>{data?.character?.status}</ItemInfo>
               </div>
             )}
-            {character?.character?.episode?.length && (
+            {data?.character?.episode?.length && (
               <div>
                 <TitleItem>Appears in:</TitleItem>
-                <ItemInfo>{`${character?.character?.episode.length} episodes`}</ItemInfo>
+                <ItemInfo>{`${data?.character?.episode.length} episodes`}</ItemInfo>
               </div>
             )}
           </div>

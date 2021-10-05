@@ -63,7 +63,7 @@ const StyledLink = styled(Link)`
 `;
 
 export const Home = () => {
-  const { characters, loading, counter, getNextPage, getPreviousPage } =
+  const { data, loading, counter, getNextPage, getPreviousPage } =
     useGetCharacters();
 
   return (
@@ -87,7 +87,7 @@ export const Home = () => {
             )}
           </ButtonContainer>
           <AvatarContainer>
-            {characters?.map((character) => {
+            {data?.characters?.results?.map((character) => {
               return (
                 <Avatar key={character.id} data-testid="avatar-container">
                   <StyledLink to={`/character/${character.id}`}>

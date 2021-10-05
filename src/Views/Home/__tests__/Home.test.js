@@ -5,13 +5,17 @@ import useGetCharacters from "../../../utils/hooks/useGetCharacters";
 
 jest.mock("../../../utils/hooks/useGetCharacters");
 
-let mockCharacters = [
-  {
-    id: 12,
-    name: "Batman",
-    image: "https://batman.com/api/character/avatar/1.jpeg",
+let mockCharacters = {
+  characters: {
+    results: [
+      {
+        id: 12,
+        name: "Batman",
+        image: "https://batman.com/api/character/avatar/1.jpeg",
+      },
+    ],
   },
-];
+};
 
 const renderComponent = () => {
   return render(
@@ -24,7 +28,7 @@ const renderComponent = () => {
 describe("Home", () => {
   it("renders the view without crashing", () => {
     useGetCharacters.mockReturnValue({
-      characters: mockCharacters,
+      data: mockCharacters,
     });
 
     const { getByText } = renderComponent();
@@ -34,10 +38,13 @@ describe("Home", () => {
 
     expect(avatarContainer).toBeInTheDocument();
     expect(avatarImage).toBeInTheDocument();
-    expect(avatarImage).toHaveAttribute("src", mockCharacters[0].image);
+    expect(avatarImage).toHaveAttribute(
+      "src",
+      mockCharacters.characters.results[0].image
+    );
     expect(avatarImage).toHaveAttribute(
       "alt",
-      `${mockCharacters[0].name}-image`
+      `${mockCharacters.characters.results[0].name}-image`
     );
     expect(getByText("Batman")).toBeInTheDocument();
   });
